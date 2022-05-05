@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Category {
+public class Category extends BaseEntity{
     @Id
     @GeneratedValue
     private Long id;
     private String name;
 
     @ManyToOne
-    @JoinColumn("PARERNT_ID")
+    @JoinColumn(columnDefinition = "PARERNT_ID")
     private Category parent;
 
     @OneToMany(mappedBy = "parent")
